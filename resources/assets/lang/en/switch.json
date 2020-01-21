@@ -90,7 +90,7 @@
       "uplinks": {
         "LABEL": "Uplinks"
       },
-      "layer_three": {
+      "function": {
         "LABEL": "Layer 3 Support",
         "HELP_TEXT": "On supported switches, runs additional Layer 3 switch commands during VLAN assignment/wipe so that the switch can route traffic for that IP. This will also run the necessary commands on the distribution switches that are marked as uplinks."
       }

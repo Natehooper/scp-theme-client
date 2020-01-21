@@ -67,7 +67,7 @@
     switchForm.uplinks = Select('switch').multi();
     switchForm.SNMP_VERSION = SNMP_VERSION;
     switchForm.LAYER = LAYER;
-    switchForm.layer3 = false;
+    switchForm.function = false;
 
 
     switchForm.$onInit = init;
@@ -90,7 +90,7 @@
 
     function fillFormInputs() {
       _.overwrite(switchForm.input, switchForm.form.input);
-      switchForm.layer3 = switchForm.input.function === FUNCTION.LAYER_3;
+      switchForm.function = switchForm.input.function === FUNCTION.LAYER_3;
     }
 
     function getData() {
@@ -98,7 +98,7 @@
 
       data.groups = _.map(switchForm.groups.selected, 'id');
       data.uplinks = _.map(switchForm.uplinks.selected, 'id');
-      data.function = switchForm.layer3 ? FUNCTION.LAYER_3 : FUNCTION.LAYER_2;
+      data.function = switchForm.function ? FUNCTION.LAYER_3 : FUNCTION.LAYER_2;
 
       return data;
     }

@@ -52,14 +52,14 @@ include /resources/angle/pug/mixins/form
 hr
 
 +label("{{ 'switch.form.network.LABEL' | translate }}")
-  .row 
-    .col-xs-8 
+  .row
+    .col-xs-8
       input.form-control(
         type="text"
         placeholder="{{ 'switch.form.network.ip.PLACEHOLDER' | translate }}"
         ng-model="switchForm.input.ip"
       )
-    .col-xs-4 
+    .col-xs-4
       input.form-control(
         type="text"
         placeholder="{{ 'switch.form.network.port.PLACEHOLDER' | translate }}"
@@ -67,14 +67,14 @@ hr
       )
 
 +label("{{ 'switch.form.ssh.LABEL' | translate }}")
-  .row 
+  .row
     .col-xs-6
       input.form-control(
         type="text"
         placeholder="{{ 'switch.form.ssh.username.PLACEHOLDER' | translate }}"
         ng-model="switchForm.input.ssh_user"
       )
-    .col-xs-6 
+    .col-xs-6
       input.form-control(
         type="text"
         placeholder="{{ 'switch.form.ssh.password.PLACEHOLDER' | translate }}"
@@ -138,13 +138,13 @@ hr
     ng-model="switchForm.input.snmp_use_32_bit"
   )
   div(ng-if="switchForm.input.layer === switchForm.LAYER.RACK")
-    +checkbox("{{ 'switch.form.layer.layer_three.LABEL' | translate }}")(
-      ng-model="switchForm.layer3"
+    +checkbox("{{ 'switch.form.layer.function.LABEL' | translate }}")(
+      ng-model="switchForm.function"
     )
-    p.help-block(translate="switch.form.layer.layer_three.HELP_TEXT")
+    p.help-block(translate="switch.form.layer.function.HELP_TEXT")
 
 +label("{{ 'switch.form.layer.uplinks.LABEL' | translate }}")(
-  ng-if="switchForm.layer3 && switchForm.input.layer === switchForm.LAYER.RACK"
+  ng-if="switchForm.function && switchForm.input.layer === switchForm.LAYER.RACK"
 )
   +ui-select("switchForm.uplinks")(
     multiple
