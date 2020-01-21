@@ -32,6 +32,8 @@
     snmp_version: SNMP_VERSION.V2c,
     layer: LAYER.RACK,
     function: FUNCTION.LAYER_2,
+    v4_address: '',
+    v6_address: '',
   };
 
   angular
@@ -67,7 +69,7 @@
     switchForm.uplinks = Select('switch').multi();
     switchForm.SNMP_VERSION = SNMP_VERSION;
     switchForm.LAYER = LAYER;
-    switchForm.function = false;
+    switchForm.function = FUNCTION;
 
 
     switchForm.$onInit = init;
